@@ -1,0 +1,11 @@
+---
+applications:
+- name: weather-broker
+  memory: 512M
+  instances: 1
+  buildpack: java_buildpack_offline
+  path: target/weather-broker.jar
+  services: [ weather-broker-service  ]
+  env:
+    WEATHER_HOST: 192.168.20.13
+    WEATHER_PORT: 8080
